@@ -14,7 +14,7 @@ namespace TestingGrounds
 {
     public partial class TestingForm : Form
     {
-        String connectionString = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=Students;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
+        String connectionString = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=Students;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False"; //Modify with the correct path.
         public TestingForm()
         {
             InitializeComponent();
@@ -24,7 +24,7 @@ namespace TestingGrounds
             SqlConnection sqlConnection = new SqlConnection(connectionString);
             String sqlShowCommand = "SELECT * FROM GradesList";
             String sqlDeleteCommand = "DELETE FROM GradesList";
-            FileInfo importFile = new FileInfo(@"C:\Users\octav_000.TOSHIBA\source\repos\TestingGrounds\TestingGrounds\GradesList_Import.sql");
+            FileInfo importFile = new FileInfo(@"C:\Users\octav_000.TOSHIBA\source\repos\TestingGrounds\TestingGrounds\GradesList_Import.sql"); //Modify with the correct path.
             String sqlImportCommand = importFile.OpenText().ReadToEnd();
             SqlCommand sqlImport = new SqlCommand(sqlImportCommand, sqlConnection);
             SqlCommand sqlDelete = new SqlCommand(sqlDeleteCommand, sqlConnection);
